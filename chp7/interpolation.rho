@@ -1,0 +1,7 @@
+new print(`rho:io:stdout`), printStuff in {
+    printStuff!({"noun": "John", "adjective": "Big"})
+    |
+    contract printStuff(map) = {
+        print!("${noun} is ${adjective}" %% *map)
+    }
+}

@@ -1,0 +1,27 @@
+new stationFactory, print(`rho:io:stdout`) in {
+    contract stationFactory(initialMessage, getInfo, setInfo ) = {
+        new currentMessage in {
+            currentMessage!(*initialMessage)
+            |
+            contract getInfo(return) = {
+                for ( msg <- currentMessage ) {
+                    return!(*msg) 
+                    |
+                    currentMessage!(*msg)
+                }
+            }
+            |
+            contract setInfo(newMessage) = {
+                for ( msg <- currentMessage ) {
+                    currentMessage!(*newMessage)
+                }
+            } 
+        }
+    }
+    |
+    new airportInfo, set in {
+        stationFactory!("Weather is nice", *airportInfo, *set)
+        |
+        airportInfo!(*print)
+    }
+}

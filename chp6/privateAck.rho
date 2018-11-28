@@ -1,0 +1,9 @@
+new pizzaShop in {
+    contract pizzaShop(order, ack) = {
+        ack!("Order Received")
+    }
+    |
+    new alice in {
+        pizzaShop!("One large alicia coffee", *alice)
+    }
+}

@@ -1,0 +1,11 @@
+new tCh, print(`rho:io:stdout`) in {
+    tCh!!((3, 4, 5))
+    |
+    for (@t <- tCh) {
+        print!(["Got ", t.nth(2)])
+    }
+    |
+    for (@t <- tCh) {
+        print!(t.toByteArray())
+    }
+}

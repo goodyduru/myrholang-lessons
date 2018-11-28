@@ -1,0 +1,15 @@
+new c2f, f2c in {
+    contract c2f(celsius, return) = {
+        return!((*celsius * 9 / 5) + 32)
+    }
+    |
+    contract f2c(farheneit, return) = {
+        return!((*farheneit - 32) * 5 / 9 )
+    }
+    |
+    new print(`rho:io:stdout`) in {
+        c2f!(0, *print)
+        |
+        f2c!(45, *print)
+    }
+}

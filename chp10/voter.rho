@@ -1,0 +1,18 @@
+new canIVote, print(`rho:io:stdout`) in {
+    contract canIVote(countryChecker, country, qualifiedAge) = {
+        contract countryChecker(otherCountry, age) = {
+            if ( *otherCountry == *country and *age >= *qualifiedAge ) {
+                print!("You are qualified")
+            }
+            else {
+                print!("You are not qualified")
+            }
+        }
+    }
+    |
+    new nigerianChecker in {
+        canIVote!(*nigerianChecker, "Nigeria", 18)
+        |
+        nigerianChecker!("Ghana", 41)
+    }
+}

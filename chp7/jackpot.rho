@@ -1,0 +1,11 @@
+new throw, print(`rho:io:stdout`) in {
+    throw!("5") | throw!("6") | throw!("3")
+    |
+    for (points <- throw) {
+        print!("Bill caught it")
+    }
+    |
+    for (points <- throw) {
+        print!("Kara caught it")
+    }
+}

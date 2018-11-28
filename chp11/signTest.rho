@@ -1,0 +1,10 @@
+new print(`rho:io:stdout`) in {
+    for ( @balance <= @"signTest" ) {
+        match balance < 0 {
+            true => print!("Account not in good standing")
+            false => print!("Account in good standing")
+        }
+    }
+}
+|
+@"signTest"!(15)

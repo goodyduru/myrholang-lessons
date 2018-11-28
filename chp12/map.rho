@@ -1,0 +1,35 @@
+new mCh, print(`rho:io:stdout`) in {
+    mCh!!({"a": 1, "b": 4, "c": 7})
+    |
+    for (@m <- mCh) {
+        print!(["Contains ", m.contains("c")])
+    }
+    |
+    for (@m <- mCh) {
+        print!(["Get ", m.get("c")])
+    }
+    |
+    for (@m <- mCh) {
+        print!(["Get Or Else", m.getOrElse("e", "?")])
+    }
+    |
+    for (@m <- mCh) {
+        print!(["Set ", m.set("b", 10)])
+    }
+    |
+    for (@m <- mCh) {
+        print!(m.toByteArray())
+    }
+    |
+    for (@m <- mCh) {
+        print!(["Length, ", m.size()])
+    }
+    |
+    for (@m <- mCh) {
+        print!(["Union: ", m.union({"d": 9})])
+    }
+    |
+    for (@m <- mCh) {
+        print!(["Diff ", m.diff({"a": 1})])
+    }
+}

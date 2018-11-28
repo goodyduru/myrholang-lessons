@@ -1,0 +1,33 @@
+new logRun, getRuns, runsCh, ack, print(`rho:io:stdout`) in {
+    runsCh!([])
+    |
+    contract logRun(distance) = {
+        for ( old <- runsCh ) {
+            runsCh!(*old ++ *distance)
+        }
+    }
+    |
+    contract logRun(distance, ack) = {
+        for (old <- runsCh) {
+            runsCh!(*old ++ *distance)
+            |
+            ack!(Nil)
+        }
+    }
+    |
+    contract getRuns(return) = {
+        for ( distance <- runsCh ) {
+            return!(*distance)
+        }
+    }
+    |
+    logRun!([5])
+    |
+    logRun!([7])
+    |
+    logRun!([8], *ack)
+    |
+    for ( _ <- ack ) {
+        getRuns!(*print)
+    }
+}

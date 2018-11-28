@@ -1,0 +1,19 @@
+new lCh, print(`rho:io:stdout`) in {
+    lCh!!([1, 2, 3, 4, 5])
+    |
+    for (@t <- lCh) {
+        print!("Got ${name}" %% {"name": t.nth(2)})
+    }
+    |
+    for (@t <- lCh) {
+        print!(t.toByteArray())
+    }
+    |
+    for (@t <- lCh) {
+        print!(["Length, ", t.length()])
+    }
+    |
+    for (@t <- lCh) {
+        print!(["Slice: ", t.slice(1, 3)])
+    }
+}

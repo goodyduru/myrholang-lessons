@@ -1,0 +1,11 @@
+new orderedNumber, lastNumber, stdoutAck(`rho:io:stdoutAck`), print(`rho:io:stdout`) in {
+    stdoutAck!("1", *orderedNumber)
+    |
+    for ( number <- orderedNumber ) {
+        stdoutAck!("2", *orderedNumber)
+    }
+    |
+    for ( number <- orderedNumber ) {
+        stdoutAck!("3", *orderedNumber)
+    }
+}

@@ -1,0 +1,14 @@
+new pizzaShop in {
+    pizzaShop!("1 large pepperoni please")
+}
+new momPhone in {
+    momPhone!("Hi Mom")
+}
+new cartoon(`rho:io:stdout`) in {
+    cartoon!("Rick")
+    |
+    cartoon!("Morty")
+}
+new error(`rho:io:stderr`) in {
+    error!("Unforgeable Nonsense")
+}

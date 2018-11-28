@@ -1,0 +1,11 @@
+new print(`rho:io:stdout`), alice, eve in {
+    for ( mail <- alice ) {
+        eve!(*mail)
+    }
+    |
+    alice!("Alice you are the best")
+    |
+    for (aliceMail <- eve) {
+        print!("Stolen alice mail")
+    }
+}

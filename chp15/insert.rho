@@ -1,0 +1,11 @@
+new doubler, uriChan, insertArbitrary(`rho:registry:insertArbitrary`), print(`rho:io:stdout`) in {
+    contract doubler(@n /\ Int, return) = {
+        return!(2 * n)
+    }
+    |
+    insertArbitrary!(bundle+{*doubler}, *uriChan)
+    |
+    for ( url <- uriChan ) {
+        print!(*url)
+    }
+}

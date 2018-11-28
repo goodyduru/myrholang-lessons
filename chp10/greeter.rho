@@ -1,0 +1,11 @@
+new greeter in {
+    contract greeter(name, return) = {
+        return!("Hello there, " ++ *name)
+    }
+    |
+    new print(`rho:io:stdout`) in {
+        greeter!("John", *print)
+        |
+        greeter!("Mary", *print)
+    }
+}

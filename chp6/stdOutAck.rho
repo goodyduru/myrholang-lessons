@@ -1,0 +1,7 @@
+new ackChannel, print(`rho:io:stdout`), stdoutAck(`rho:io:stdoutAck`) in {
+    stdoutAck!("Order Received", *ackChannel)
+    |
+    for ( acknowledgement <- ackChannel ) {
+        print!("Of Course it is")
+    }
+}

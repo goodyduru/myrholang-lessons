@@ -1,0 +1,13 @@
+new airportInfo, print(`rho:io:stdout`) in {
+    airportInfo!("No Wind! Runway clear")
+    |
+    for (info <- airportInfo) {
+        print!(*info)
+        |
+        airportInfo!("Ok guvnor, thanks for the info")
+    }
+    |
+    for (oldInfo <- airportInfo) {
+        airportInfo!("Wind dey oooo!!! Abort bikonu")
+    }
+}

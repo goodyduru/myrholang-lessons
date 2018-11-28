@@ -1,0 +1,11 @@
+new airportInfo, print(`rho:io:stdout`) in {
+    airportInfo!("No wind, runway clear")
+    |
+    for (info <! airportInfo) {
+        print!(*info)
+    }
+    |
+    for (oldInfo <- airportInfo) {
+        airportInfo!("New update")
+    }
+}

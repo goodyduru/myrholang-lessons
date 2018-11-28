@@ -1,0 +1,12 @@
+new print(`rho:io:stdout`), bindChecker in {
+    contract bindChecker(data, return) = {
+        match *data {
+            "nombre" \/ "name" => return!("name-like")
+            _ => return!("Not name-like")
+        }
+    }
+    |
+    bindChecker!("name", *print)
+    |
+    bindChecker!("non", *print)
+}

@@ -1,0 +1,19 @@
+new pizzaShop, stdout(`rho:io:stdout`), coffeeShop in {
+    new pizzaShopOrder in {
+        for (paid <= pizzaShop) {
+            paid!(bundle+ {*pizzaShopOrder})
+        }
+        |
+        for (order <- pizzaShopOrder) {
+            stdout!(*order)
+        }
+    }
+    |
+    new order in {
+        pizzaShop!(*order)
+        |
+        for ( permission <- order ) {
+            permission!("Two Large Kunu")
+        }
+    }
+}

@@ -1,0 +1,9 @@
+new persistentPizzaOrder, print(`rho:io:stdout`) in {
+    for (order <= persistentPizzaOrder) {
+        print!("Order received")
+    }
+    |
+    persistentPizzaOrder!("One choco milo")
+    |
+    persistentPizzaOrder!("Two large orijin")
+}

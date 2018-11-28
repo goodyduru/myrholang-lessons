@@ -1,0 +1,7 @@
+new pizzaShop, stdout(`rho:io:stdout`), coffeeShop in {
+    for ( order <- pizzaShop ) {
+        stdout!("Order received")
+    }
+    |
+    pizzaShop!("One last pepperoni please")
+}

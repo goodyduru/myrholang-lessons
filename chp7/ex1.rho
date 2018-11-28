@@ -1,0 +1,21 @@
+new throw, bill, kara, stdoutack(`rho:io:stdoutAck`), print(`rho:io:stdout`) in {
+    throw!("5")
+    |
+    throw!("6")
+    |
+    for (point <- throw) {
+        stdoutack!(*point, *bill)
+    }
+    |
+    for (point <- throw) {
+        stdoutack!(*point, *kara)
+    }
+    |
+    for (billBall <- bill) {
+        print!("Bill caught this")
+    }
+    |
+    for (karaBall <- kara) {
+        print!("Kara caught this")
+    }
+}

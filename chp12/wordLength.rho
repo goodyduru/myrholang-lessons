@@ -1,0 +1,9 @@
+new wordLength, print(`rho:io:stdout`) in {
+    contract wordLength(@word) = {
+        print!("How many characters are in " ++ word)|
+        print!(word.length())|
+        print!("Slice of word is " ++ word.slice(0, 5))
+    }
+    |
+    wordLength!("Moi-moi")
+}

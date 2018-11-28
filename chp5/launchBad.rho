@@ -1,0 +1,11 @@
+new alice, bob, print(`rho:io:stdout`) in {
+    for ( command <- alice ) {
+        for ( bobCommand <- bob ) {
+            print!("Rocket Launched")
+        }
+    }
+    |
+    alice!("Launch")
+    |
+    bob!("Launch")
+}

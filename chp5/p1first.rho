@@ -1,0 +1,9 @@
+new p1, p2, signal in {
+    p1!("Send any message")
+    |
+    signal!("Go ahead, I'm done")
+    |
+    for (_ <- signal) {
+        p2!("Hope I win")
+    }
+}

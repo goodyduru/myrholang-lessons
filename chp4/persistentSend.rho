@@ -1,0 +1,11 @@
+new airportInfo, print(`rho:io:stdout`) in {
+    airportInfo!!("No Wind, No Wahala")
+    |
+    for (info <- airportInfo) {
+        print!(*info)
+    }
+    |
+    for (info <- airportInfo) {
+        print!(*info)
+    }
+}

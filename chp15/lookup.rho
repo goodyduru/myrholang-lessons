@@ -1,0 +1,7 @@
+new lookup(`rho:registry:lookup`), doublerCh, print(`rho:io:stdout`) in {
+    lookup!(`rho:id:e1ugodok7otiq4wd9r64gsks4baqt9897ngqiqgcmndqu5ex5r7ibh`, *doublerCh)
+    |
+    for ( doubler <- doublerCh ) {
+        doubler!(7, *print)
+   }
+}

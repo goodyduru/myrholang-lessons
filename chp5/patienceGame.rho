@@ -1,0 +1,17 @@
+new p1, p2, print(`rho:io:stdout`) in {
+    p1!("I Sent a message")
+    |
+    p2!("Hope I Win")
+    |
+    for (p1game <- p1) {
+        for (p2game <- p2) {
+            print!("Player Two Won")
+        }
+    }
+    |
+    for (p2game <- p2) {
+        for (p1game <- p1) {
+            print!("Player One Won")
+        }
+    }
+}

@@ -1,0 +1,7 @@
+new myChan in {
+    myChan!("Hello Pancho")
+}
+|
+for (msg <- myChan) {
+    stdout!(*msg)
+}

@@ -1,0 +1,33 @@
+new alice, eve, print(`rho:io:stdout`) in {
+    new aliceFanMail in {
+        for ( return <= alice ) {
+            return!(bundle+ {*aliceFanMail})
+        }
+        |
+        for ( mail <- aliceFanMail ) {
+            print!("Alice received a mail")
+        }
+    }
+    |
+    new return in {
+        alice!(*return)
+        |
+        for ( aliceFanMail <- return ) {
+            aliceFanMail!("Alice, you're the best")
+        }
+    }
+    |
+    new return in {
+        alice!(*return)
+        |
+        for (aliceFanMail <- return) {
+            for (@stolenMail <- aliceFanMail) {
+                print!(["Cannot read stolen mail", stolenMail])
+            }
+        }
+    }
+    |
+    for (stolenMail <- alice) {
+        print!("I stole the message")
+    }
+}

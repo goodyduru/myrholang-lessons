@@ -1,0 +1,41 @@
+new openAccount, print(`rho:io:stdout`) in {
+    contract openAccount(initialDeposit, deposit, withdraw, check) = {
+        new balanceCh in {
+            balanceCh!(*initialDeposit)
+            |
+            contract withdraw(amount, ack) = {
+                for ( old <- balanceCh ) {
+                    balanceCh!( *old - *amount )
+                    |
+                    ack!(Nil) 
+                }
+            }
+            |
+            contract deposit(amount, ack) = {
+                for ( old <- balanceCh ) {
+                    balanceCh!( *old + *amount ) 
+                    |
+                    ack!(Nil) 
+                }
+            }
+            |
+            contract check(return) = {
+                for (amount <- balanceCh) {
+                    return!(*amount)
+                    |
+                    balanceCh!(*amount)
+                }
+            }
+        }
+    }
+    |
+    new sarahDeposit, sarahWithdrawal, sarahCheck, ack in {
+        openAccount!(10, *sarahDeposit, *sarahWithdrawal, *sarahCheck)
+        |
+        sarahWithdrawal!(3, *ack) 
+        |
+        for ( _ <- ack ) {
+            sarahCheck!(*print)
+        }
+    }
+}

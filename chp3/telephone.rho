@@ -1,0 +1,21 @@
+new alice, bob, charlie, dawn, print(`rho:io:stdout`) in {
+    alice!("Let's start by saying hello, shall we???")
+    |
+    for (message <- alice) {
+        bob!(*message)
+    }
+    |
+    for (bobMessage <= bob) {
+        charlie!("Well, I am the stubborn one, ain't I????")
+        |
+        dawn!(*bobMessage)
+    }
+    |
+    for (charlieMessage <- charlie) {
+        print!(*charlieMessage)
+    }
+    |
+    for (dawnMessage <- dawn) {
+        print!(*dawnMessage)
+    }
+}

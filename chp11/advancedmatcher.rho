@@ -1,0 +1,19 @@
+new patternMatcher, print(`rho:io:stdout`) in {
+    for ( x <= patternMatcher ) {
+        match *x {
+            Nil => print!("Got a stopped process")
+            {_!(_)} => print!("Got a send")
+            {for(@0 <- _){_}} => print!("Got a receive")
+            Int => print!("Got an integer")
+            _ => print!("Got something else")
+        }
+    }
+    |
+    patternMatcher!({for (@0 <- @0){0}})
+    |
+    patternMatcher!({0|"hello"})
+    |
+    patternMatcher!({@"world"!("hello")})
+    |
+    patternMatcher!(Nil)
+}

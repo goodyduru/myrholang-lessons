@@ -1,0 +1,9 @@
+new alice, bob, print(`rho:io:stdout`) in {
+    for (aliceInfo <- alice; bobInfo <- bob){
+        print!("Rocket Launched")
+    }
+    |
+    alice!("Launch")
+    |
+    bob!("Launch")
+}

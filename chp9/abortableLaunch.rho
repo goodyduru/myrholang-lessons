@@ -1,0 +1,9 @@
+new rocketFactory in {
+    contract rocketFactory(aliceLaunch, bobLaunch, ack) = {
+        new aliceReadyCh, bobReadyCh in {
+            aliceReadyCh!(false) | bobReadyCh!(false) 
+            |
+            
+        }
+    }
+}

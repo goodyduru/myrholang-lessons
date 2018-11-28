@@ -1,0 +1,9 @@
+new pizzaShop, print(`rho:io:stdout`) in {
+    contract pizzaShop(order) = {
+        print!(*pizzaShop)
+    }
+    |
+    pizzaShop!("Extra large bacon pls")
+    |
+    pizzaShop!("Ogbeni plis")
+}

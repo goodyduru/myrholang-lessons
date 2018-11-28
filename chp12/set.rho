@@ -1,0 +1,27 @@
+new sCh, print(`rho:io:stdout`) in {
+    sCh!!(Set(1, 2, 3, 4, 5))
+    |
+    for (@s <- sCh) {
+        print!("Got ${name}" %% {"name": s.nth(2)})
+    }
+    |
+    for (@s <- sCh) {
+        print!(["Addition ", s.add(6)])
+    }
+    |
+    for (@s <- sCh) {
+        print!(s.toByteArray())
+    }
+    |
+    for (@s <- sCh) {
+        print!(["Length, ", s.size()])
+    }
+    |
+    for (@s <- sCh) {
+        print!(["Union: ", s.union(Set(9, 10, 1))])
+    }
+    |
+    for (@s <- sCh) {
+        print!(["Diff ", s.diff(Set(9, 10, 1))])
+    }
+}

@@ -1,0 +1,21 @@
+new P1, P2, print(`rho:io:stdout`) in {
+    new active in {
+        active!(true)
+        |
+        for (_ <- active; _ <- P1) {
+            for (_ <- P2) {
+                print!("Player Two Wins")
+            }
+        }
+        |
+        for (_ <- active; _ <- P2) {
+            for ( _ <- P1 ) {
+                print!("Player One Wins")
+            }
+        }
+    }
+    |
+    P1!(Nil)
+    |
+    P2!(Nil)
+}

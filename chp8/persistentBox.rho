@@ -1,0 +1,9 @@
+new print(`rho:io:stdout`), boxCh in {
+    boxCh!("42")
+    |
+    for ( data <- boxCh ) {
+        print!(*data)
+        |
+        @"somePublicChannel"!(*data)
+    }
+}

@@ -1,0 +1,11 @@
+new coffeeShop, stdout(`rho:io:stdout`) in {
+    contract coffeeShop(order) = {
+        stdout!(*order)
+    }
+    |
+    coffeeShop!("One large Cappucino Please")
+    |
+    coffeeShop!("One small Latte Abeg")
+    |
+    coffeeShop!("2 Oga-like shokolate")
+}

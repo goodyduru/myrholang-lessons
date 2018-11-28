@@ -1,0 +1,9 @@
+new pizzaShop, print(`rho:io:stdout`) in {
+    contract pizzaShop(order, ack) = {
+        ack!("Order received")
+    }
+    |
+    pizzaShop!("2 Large Capo")
+    |
+    pizzaShop!("Gala Please")
+}

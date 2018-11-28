@@ -1,0 +1,21 @@
+new area in {
+    contract area(length, breadth, return) = {
+        return!(*length * *breadth)
+    }
+    |
+    contract area(length, return) = {
+        return!(*length * *length)
+    }
+    |
+    contract area(return) = {
+        return!(1)
+    }
+    |
+    new print(`rho:io:stdout`) in {
+        area!(5, 3, *print)
+        |
+        area!(4, *print)
+        |
+        area!(*print)
+    }
+}

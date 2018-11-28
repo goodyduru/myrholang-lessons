@@ -1,0 +1,22 @@
+new gameCh, print(`rho:io:stdout`) in {
+    new throw in {
+        gameCh!!(bundle- {*throw})
+        |
+        throw!("1")
+        |
+        throw!("2")
+        |
+        throw!("3")
+    }
+    |
+    for ( throw <- gameCh ) {
+        for ( points <- throw ) {
+            print!(["Bill caught it. Points: ", *points])
+        }
+    }
+    |
+    for ( throw <- gameCh ) {
+        throw!("100")
+    }
+
+}
